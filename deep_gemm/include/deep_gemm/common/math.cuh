@@ -11,8 +11,11 @@
 #ifndef DG_IN_CUDA_COMPILATION
 
 #include <stdexcept>
+#include <torch/python.h>
 
 namespace deep_gemm {
+
+constexpr auto kPackedFP4 = torch::kInt8;
 
 template <typename T>
 static T ceil_div(const T& a, const T& b) {
